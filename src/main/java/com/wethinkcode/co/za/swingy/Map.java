@@ -12,6 +12,8 @@ public class Map {
         a += x;
         b += y;
 
+        collision(array, a, b);
+        
         if (a == 0 || a >= 9 || b == 0 || b >= 9) {
             System.out.println("out of bond");
             return false;
@@ -19,6 +21,34 @@ public class Map {
             array[a][b] = "H ";
         return true;
 
+    }
+
+    //1.check current postion and search if new co-ordinates holds enemy location before fighting
+    //2.fight to activate battle simulation
+    //3. revert hero back to former location on map and returns enemy  
+    public void collision(String array[][], int x, int y)
+    {
+        int map_size = 9;
+        int i = 0;
+        int j = 0;
+
+        if(array[x][y].equals("E "))
+        {
+            System.out.println("mommy told me");
+        }
+        
+        // while(j < map_size)
+        // {
+        //     while(i < map_size)
+        //     {
+        //         if(array[j][i].equals("E "))
+        //         {
+        //             System.out.println("mommy told me");
+        //         }
+        //         i++;
+        //     }
+        //     j++;
+        // }
     }
 
     public void enemies(String array[][]) {
@@ -60,23 +90,21 @@ public class Map {
 
                 System.out.print("\n");
             }
+            System.out.println("Pick move\n");
             String chosen_command = input.nextLine();
-            System.out.println("Pick move");
+            
             if (chosen_command.equals("w")) {
-                System.out.println("Do u work");
                 postion(map, -1, 0);
             } else if (chosen_command.equals("s")) {
-                System.out.println("Do u work south");
+              
                 postion(map, 1, 0);
             } else if (chosen_command.equals("d")) {
-                System.out.println("Do u work west");
+                
                 postion(map, 0, 1);
             } else if (chosen_command.equals("a")) {
-                System.out.println("Do u work east");
                 postion(map, 0, -1);
             }
-
-            // input.close();
+            
 
         }
 
