@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.wethinkcode.co.za.swingy.AppTest" time="0.127" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.wethinkcode.co.za.swingy.AppTest" time="0.052" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ZA"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.0.3.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/goinfre/msambo/Desktop/Project/swingy/target/surefire/surefirebooter1911173323531099994.jar /goinfre/msambo/Desktop/Project/swingy/target/surefire 2019-08-20T12-57-05_506-jvmRun1 surefire8092045685444030649tmp surefire_018243948352274855842tmp"/>
+    <property name="sun.java.command" value="/goinfre/msambo/Desktop/Project/swingy/target/surefire/surefirebooter17814168903427813304.jar /goinfre/msambo/Desktop/Project/swingy/target/surefire 2019-08-20T13-28-06_202-jvmRun1 surefire15479545370915272241tmp surefire_014440823106872007979tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/goinfre/msambo/Desktop/Project/swingy/target/test-classes:/goinfre/msambo/Desktop/Project/swingy/target/classes:/goinfre/msambo/.m2/repository/junit/junit/4.11/junit-4.11.jar:/goinfre/msambo/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/goinfre/msambo/Desktop/Project/swingy/target/surefire/surefirebooter1911173323531099994.jar"/>
+    <property name="surefire.real.class.path" value="/goinfre/msambo/Desktop/Project/swingy/target/surefire/surefirebooter17814168903427813304.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="11.0.3+12-LTS"/>
@@ -61,5 +61,5 @@
     <property name="java.class.version" value="55.0"/>
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.wethinkcode.co.za.swingy.AppTest" time="0.002"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.wethinkcode.co.za.swingy.AppTest" time="0.001"/>
 </testsuite>

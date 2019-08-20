@@ -133,13 +133,30 @@ public class Map {
         a += x;
         b += y;
 
-        collision(array, a, b);
-        
+        boolean result;
+
+        result = collision(array, a, b);
+
         if (a == 0 || a >= 9 || b == 0 || b >= 9) {
             System.out.println("out of bond");
             return false;
-        } else
+        }
+        else{
+
+        if(result == false)
+        {
+            array[a][b] = "E ";
+            a-=x;
+            b-=y;
             array[a][b] = "H ";
+            System.out.println("Help");
+        }else
+        {
+            array[a][b] = "H ";
+        }
+    }
+     
+     
         return true;
 
     }
@@ -147,13 +164,13 @@ public class Map {
     //1.check current postion and search if new co-ordinates holds enemy location before fighting
     //2.fight to activate battle simulation
     //3. revert hero back to former location on map and returns enemy  
-    public void collision(String array[][], int x, int y)
+    public boolean collision(String array[][], int x, int y)
     {
         int map_size = 9;
         int i = 0;
         int j = 0;
 
-        boolean result;
+        boolean result = true;
 
         if(array[x][y].equals("E "))
         {
@@ -163,12 +180,15 @@ public class Map {
             if(result == true)
             {
                 System.out.println("Winner");
+
             }
             else if(result == false)
             {
                 System.out.println("Loser");
+                return(result);
             }
         }
+        return result;
     
     }
 
