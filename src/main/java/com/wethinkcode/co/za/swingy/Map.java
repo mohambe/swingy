@@ -12,7 +12,7 @@ public class Map {
         Random rand = new Random();
 
         // Game varaible
-        String[] enemies = { "Puppy", "Doll", "Ex's" };
+        String[] enemies = { "Puppy", "Doll", "Ex" };
         int maxEnemyHealth = 75;
         int enemyAttackDamage = 25;
 
@@ -120,6 +120,8 @@ public class Map {
 
         result = collision(array, a, b);
 
+        //get map size max and min and use them as restriction
+
         if (a == 0 || a >= 9 || b == 0 || b >= 9) {
             System.out.println("out of bond");
             return false;
@@ -184,10 +186,10 @@ public class Map {
     // constructor
     public Map(int map_size) {
 
-        String map[][] = new String[9][9];
+        String map[][] = new String[map_size][map_size];
 
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
+        for (int i = 0; i < map_size; i++) {
+            for (int j = 0; j < map_size; j++) {
                 map[i][j] = "* ";
             }
             //
@@ -198,8 +200,8 @@ public class Map {
         enemies(map);
         postion(map, 0, 0);
         while (true) {
-            for (int i = 0; i < 9; i++) {
-                for (int j = 0; j < 9; j++) {
+            for (int i = 0; i < map_size; i++) {
+                for (int j = 0; j < map_size; j++) {
                     System.out.print(map[i][j]);
                 }
 

@@ -1,6 +1,10 @@
 package com.wethinkcode.co.za.swingy;
 
 import com.wethinkcode.co.za.swingy.Database.ConnectionClass;
+import com.wethinkcode.co.za.swingy.HeroBuilder.Hero;
+import com.wethinkcode.co.za.swingy.HeroBuilder.HeroBuilder;
+import com.wethinkcode.co.za.swingy.HeroBuilder.HeroEngineer;
+import com.wethinkcode.co.za.swingy.HeroBuilder.OldHeroBuilder;
 
 import java.sql.*;
 
@@ -12,6 +16,11 @@ public class Main{
         Statement stmt = null;
         ConnectionClass connection = new ConnectionClass();
         connect = connection.connectionClass();
+        int id;
+        String name = "" ;
+        String clan_name="";
+        int health=0 ;
+        int damage=0;
 
 //        try {
 //            //table creation
@@ -34,7 +43,7 @@ public class Main{
 //        System.out.println("Hero table created successfully");
 //
 //
-//        try{
+//        try{//creating new hero
 //            //Insertion of hero information
 //            connect.setAutoCommit(false);
 //            stmt = connect.createStatement();
@@ -65,11 +74,12 @@ public class Main{
 
             while (rs.next())
             {
-                int id = rs.getInt("id");
-                String name =rs.getString("name");
-                String clan_name =rs.getString("clan_name");
-                int health = rs.getInt("health");
-                int damage = rs.getInt("damage");
+                id = rs.getInt("id");
+                name =rs.getString("name");
+                clan_name =rs.getString("clan_name");
+                health = rs.getInt("health");
+                damage = rs.getInt("damage");
+
 
                 System.out.println( "ID = " + id );
                 System.out.println( "NAME = " + name );
@@ -77,7 +87,37 @@ public class Main{
                 System.out.println( "HEALTH = " + health );
                 System.out.println( "DAMAGE = " + damage );
                 System.out.println();
+
+
+
+
             }
+
+            HeroBuilder oldStyleHero = new OldHeroBuilder(name,clan_name, health,damage);
+
+            // Pass the OldHeroBuilder specification to the engineer
+            HeroEngineer HeroEngineer = new HeroEngineer(oldStyleHero);
+
+            // Tell the engineer to make the Hero using the specifications
+
+            // of the OldHeroBuilder class
+
+            HeroEngineer.makeHero();
+
+            // The engineer returns the right Hero based off of the spec
+
+            // sent to it on line 11
+
+            Hero firstHero = HeroEngineer.getHero();
+            System.out.println("Hero Built");
+
+            System.out.println("Hero Name Type: " + firstHero.getHeroName());
+
+            System.out.println("Hero Hp Type: " + firstHero.getHeroHp());
+
+            System.out.println("Hero Dp Type: " + firstHero.getHeroDp());
+
+            System.out.println("Hero clan Type: " + firstHero.getHeroClan());
             rs.close();
             stmt.close();
             connect.close();
