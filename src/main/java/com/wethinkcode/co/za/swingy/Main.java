@@ -90,7 +90,6 @@ public class Main{
 
 
 
-
             }
 
             HeroBuilder oldStyleHero = new OldHeroBuilder(name,clan_name, health,damage);

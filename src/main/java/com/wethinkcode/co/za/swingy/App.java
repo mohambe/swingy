@@ -11,9 +11,12 @@ public class App
     {
 
         //work on sizing
-        ///
+        //
+        int level = 1;
+        // might need to make map return something so we can determine whether to increase map level
+        int map_size=(level -1)*5+10-(level/2);
 
-        Map Map = new Map(13);
+        Map Map = new Map(map_size);
 
     }
 

@@ -1,79 +1,52 @@
-// package com.wethinkcode.co.za.swingy.controller;
+ package com.wethinkcode.co.za.swingy.controller;
 
-// import java.util.Random;
+ import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
+ import com.wethinkcode.co.za.swingy.HeroBuilder.HeroEngineer;
 
-// public class controls {
+ import java.util.Random;
 
-//     static int a = 4;
-//     static int b = 4;
-//     public boolean postion(String array[][], int x, int y) {
-//         array[a][b] = "* ";
-//         a += x;
-//         b += y;
+ public class controls {
 
-//         boolean result;
+     // 1.check current postion and search if new co-ordinates holds enemy location
+     // before fighting
+     // 2.fight to activate battle simulation
+     // 3. revert hero back to former location on map and returns enemy
+     public boolean collision(String array[][], int x, int y) {
 
-//         result = collision(array, a, b);
 
-//         if (a == 0 || a >= 9 || b == 0 || b >= 9) {
-//             System.out.println("out of bond");
-//             return false;
-//         } else {
+         boolean result = true;
+         DatabaseMethod data = new DatabaseMethod();
+         HeroEngineer heroEngineer;
 
-//             if (result == false) {
-//                 array[a][b] = "E ";
-//                 a -= x;
-//                 b -= y;
-//                 array[a][b] = "H ";
-//                 System.out.println("Help");
-//             } else {
-//                 array[a][b] = "H ";
-//             }
-//         }
+         if (array[x][y].equals("E ")) {
+             heroEngineer=data.fetchHeroEngine();
 
-//         return true;
+             battleSim battleThing = new battleSim();
+             result = battleThing.battle(heroEngineer);
 
-//     }
+             if (result == true) {
+                 System.out.println("Winner");
 
-//      // 1.check current postion and search if new co-ordinates holds enemy location
-//     // before fighting
-//     // 2.fight to activate battle simulation
-//     // 3. revert hero back to former location on map and returns enemy
-//     public boolean collision(String array[][], int x, int y) {
-//         int map_size = 9;
-//         int i = 0;
-//         int j = 0;
+             } else if (result == false) {
+                 System.out.println("Loser");
+                 return (result);
+             }
+         }
+         return result;
 
-//         boolean result = true;
+     }
 
-//         if (array[x][y].equals("E ")) {
-//             System.out.println("mommy told me");
-//             result = battle();
+     public void enemies(String array[][], int enemy_zone) {
+         Random rand = new Random();
+         int size =enemy_zone;
+         //map_max;//so enemies don't show up on edge
 
-//             if (result == true) {
-//                 System.out.println("Winner");
+         int a;
+         int b;
 
-//             } else if (result == false) {
-//                 System.out.println("Loser");
-//                 return (result);
-//             }
-//         }
-//         return result;
+         a = rand.nextInt(size);
+         b = rand.nextInt(size);
+         array[a][b] = "E ";
+     }
 
-//     }
-
-//     public void enemies(String array[][]) {
-//         Random rand = new Random();
-//         int size = 9;
-
-//         int a;
-//         int b;
-
-//         a = rand.nextInt(size);
-//         b = rand.nextInt(size);
-
-//         array[a][b] = "E ";
-
-//     }
-
-// }
+ }
