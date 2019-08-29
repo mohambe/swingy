@@ -56,4 +56,63 @@ public class DatabaseMethod {
         }
 
     }
+
+
+    public void fetch_all()
+    {
+        Connection connect = null;
+        Statement stmt = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect = connection.connectionClass();
+
+
+        try{
+
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs =stmt.executeQuery("SELECT * FROM HEROS");
+            int i =1;
+            while(rs.next())
+            {
+
+                String name =  rs.getString("name");
+                String clan= rs.getString("clan_name");
+                System.out.println(i + "."+ name +" of clan " +clan);
+                i++;
+            }
+            System.out.println("Table accessed successfully");
+            connect.close();
+        }
+    catch (Exception e) {
+        //            HeroEngineer.makeHero();
+        System.out.println("Error: " + e.getMessage());
+        System.exit(0);
+
+    }
+    }
+
+    public String fetch_hero_name(String H_name)
+    { System.out.println(".11of clan " );
+        Connection connect = null;
+        Statement stmt = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect= connection.connectionClass();
+        try{
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs =stmt.executeQuery("SELECT * FROM HEROS WHERE NAME = H_name;");
+//    ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE ID = 2;");
+            {
+                String name =  rs.getString("name");
+//                String clan= rs.getString("clan_name");
+                System.out.println("."+ name +" of clan " );
+            }
+
+        }catch (Exception e)
+        {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
+        return null;
+    }
 }
