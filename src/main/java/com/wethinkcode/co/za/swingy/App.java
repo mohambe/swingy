@@ -1,60 +1,59 @@
 package com.wethinkcode.co.za.swingy;
 
-import com.wethinkcode.co.za.swingy.*;
 import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
+import com.wethinkcode.co.za.swingy.controller.HeroCreation;
+import java.util.Scanner;
 
-import java.util.Random;
+public class App {
+    public static void main(String[] args) {
+        DatabaseMethod create = new DatabaseMethod();
 
-import java.util.Scanner;;
+        create.SwingyTable();
+        while (true) {
+            System.out.println("**************");
+            System.out.println("*   Swingy   *");
+            System.out.println("**************");
 
-public class App 
-{
-    public static void main( String[] args )
-    {
+            System.out.println("1.Select Hero");
+            System.out.println("2.Create Hero");
 
+            Scanner input = new Scanner(System.in);
+            String choice = input.nextLine();
+            String Hero_name = null;
+            if (choice.equals("1")) {
+                // call fetch hero list
+                DatabaseMethod fetch = new DatabaseMethod();
+                fetch.fetch_all();
+                System.out.println("Select Hero's name");
+                String hero = input.next();
+                System.out.println(hero);
+                Hero_name = fetch.fetch_hero_name(hero);
 
-        System.out.println("**************");
-        System.out.println("*   Swingy   *");
-        System.out.println("**************");
+                int level = 1;
+                // might need to make map return something so we can determine whether to
+                // increase map level
+                int map_size = (level - 1) * 5 + 10 - (level / 2);
+                Map Map = new Map(map_size, Hero_name);
 
-        System.out.println("1.Select Hero");
-        System.out.println("2.Create Hero");
+            } else if (choice.equals("2")) {
+                // create
+                // insert to database
 
-        Scanner input = new Scanner(System.in);
-        String choice  = input.nextLine();
-        if(choice.equals("1"))
-        {
-            //call fetch hero list
-            DatabaseMethod fetch = new DatabaseMethod();
-            fetch.fetch_all();
-            System.out.println("Select Hero's name");
-            String hero =input.next();
+                HeroCreation creator = new HeroCreation();
 
-            System.out.println(hero);
-            fetch.fetch_hero_name(hero);
+                System.out.println("Please provide Hero chosen name :");
+                String new_hero = input.nextLine();
+                System.out.println("Please choose Class :");
+                System.out.println("Ninja");
+                System.out.println("Pirate");
+                String new_clan = input.nextLine();
+                creator.HeroCreation(new_hero, new_clan);
 
-        }else if(choice.equals("2"))
-        {
-            //create
-            //insert to database
-        }else
-        {
-            System.out.println("incorrect option");
+                create.create_new_hero(creator.getName(), creator.getClan(), creator.getHp(), creator.getDp());
+            } else {
+                System.out.println("incorrect option");
+            }
         }
-
-
-        /**
-
-        //work on sizing
-        //
-        int level = 1;
-        // might need to make map return something so we can determine whether to increase map level
-        int map_size=(level -1)*5+10-(level/2);
-
-        Map Map = new Map(map_size);
-
-         **/
-
     }
 
 }

@@ -10,8 +10,29 @@ import java.sql.Statement;
 
 public class DatabaseMethod {
 
+    public void SwingyTable() {
+        Connection connect = null;
+        Statement stmt = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect = connection.connectionClass();
 
-    public HeroEngineer fetchHeroEngine() {
+        try {
+            // table creation
+            stmt = connect.createStatement();
+            String sql = "CREATE TABLE IF NOT EXISTS HEROS " + "(ID INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL,"
+                    + "NAME      TEXT    NOT NULL UNIQUE," + "CLAN_NAME   TEXT  NOT NULL," + "HEALTH     INT NOT NULL,"
+                    + "DAMAGE     INT  NOT NULL)";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            connect.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    public HeroEngineer fetchHeroEngine(String Hero_name) {
         Connection connect = null;
         Statement stmt = null;
         ConnectionClass connection = new ConnectionClass();
@@ -24,7 +45,7 @@ public class DatabaseMethod {
         try {
             connect.setAutoCommit(false);
             stmt = connect.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE ID = 2;");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE NAME =  + '" + Hero_name + "'");
 
             while (rs.next()) {
                 id = rs.getInt("id");
@@ -43,11 +64,9 @@ public class DatabaseMethod {
 
             HeroBuilder oldStyleHero = new OldHeroBuilder(name, clan_name, health, damage);
             HeroEngineer HeroEngineer = new HeroEngineer(oldStyleHero);
-//            HeroEngineer.makeHero();
             rs.close();
             stmt.close();
             connect.close();
-            System.out.println("Operation done successfully");
             return HeroEngineer;
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -57,62 +76,73 @@ public class DatabaseMethod {
 
     }
 
+    public void fetch_all() {
+        Connection connect = null;
+        Statement stmt = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect = connection.connectionClass();
+        try {
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS");
+            int i = 1;
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String clan = rs.getString("clan_name");
+                System.out.println(i + "." + name + " of clan " + clan);
+                i++;
+            }
+            connect.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
+    }
 
-    public void fetch_all()
-    {
+    public String fetch_hero_name(String H_name) {
+        Connection connect = null;
+        Statement stmt = null;
+        String name = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect = connection.connectionClass();
+        try {
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE NAME =  + '" + H_name + "'");
+            {
+                name = rs.getString("name");
+                String clan = rs.getString("clan_name");
+                System.out.println("." + name + " of clan " + clan);
+                connect.close();
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
+        return name;
+    }
+
+    public void create_new_hero(String Hero_name, String clan, int hp, int dp) {
         Connection connect = null;
         Statement stmt = null;
         ConnectionClass connection = new ConnectionClass();
         connect = connection.connectionClass();
 
-
-        try{
-
+        try {
             connect.setAutoCommit(false);
             stmt = connect.createStatement();
-            ResultSet rs =stmt.executeQuery("SELECT * FROM HEROS");
-            int i =1;
-            while(rs.next())
-            {
-
-                String name =  rs.getString("name");
-                String clan= rs.getString("clan_name");
-                System.out.println(i + "."+ name +" of clan " +clan);
-                i++;
-            }
-            System.out.println("Table accessed successfully");
-            connect.close();
-        }
-    catch (Exception e) {
-        //            HeroEngineer.makeHero();
-        System.out.println("Error: " + e.getMessage());
-        System.exit(0);
-
-    }
-    }
-
-    public String fetch_hero_name(String H_name)
-    { System.out.println(".11of clan " );
-        Connection connect = null;
-        Statement stmt = null;
-        ConnectionClass connection = new ConnectionClass();
-        connect= connection.connectionClass();
-        try{
-            connect.setAutoCommit(false);
-            stmt = connect.createStatement();
-            ResultSet rs =stmt.executeQuery("SELECT * FROM HEROS WHERE NAME = H_name;");
-//    ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE ID = 2;");
-            {
-                String name =  rs.getString("name");
-//                String clan= rs.getString("clan_name");
-                System.out.println("."+ name +" of clan " );
-            }
-
-        }catch (Exception e)
-        {
+            System.out.println("1");
+            String sql = "INSERT INTO HEROS (NAME,CLAN_NAME,HEALTH,DAMAGE) " + "VALUES ('" + Hero_name + "', '"
+                    + clan + "', '" + hp + "',' " + dp + "');";
+            stmt.executeUpdate(sql);
+            stmt.close();
+            connect.commit();
+        } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             System.exit(0);
         }
-        return null;
+        System.out.println("Created");
     }
+
+    pu
 }

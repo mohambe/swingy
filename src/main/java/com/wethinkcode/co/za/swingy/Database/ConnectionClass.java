@@ -6,7 +6,6 @@ public class ConnectionClass {
     public Connection connectionClass(){
 
         Connection connect= null;
-        // Statement stmt = null;
 
         try{
             Class.forName("org.sqlite.JDBC");

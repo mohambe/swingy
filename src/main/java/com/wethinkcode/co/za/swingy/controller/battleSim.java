@@ -15,7 +15,7 @@ public class battleSim {
         // Game varaible
         String[] enemies = { "Puppy", "Doll", "Ex" };
         int maxEnemyHealth = 75;
-        int enemyAttackDamage = 25;
+        int enemyAttackDamage = 35;
 
         // Player variable
         int health = firstHero.getHeroHp();
@@ -26,7 +26,8 @@ public class battleSim {
 
         boolean running = true;
 
-        System.out.println("Welcome "+ firstHero.getHeroName() +" of "+firstHero.getHeroClan()+" clan to War room");
+        System.out
+                .println("Welcome " + firstHero.getHeroName() + " of " + firstHero.getHeroClan() + " clan to War room");
 
         while (running) {
             System.out.println("--------------------------------------");
@@ -51,11 +52,11 @@ public class battleSim {
                     enemyHealth -= damageDealt;
                     health -= damageTaken;
 
-                    System.out.println("\t You strike the " + enemy + " for " + damageDealt + " damage");
-                    System.out.println("\t You received " + damageTaken + " damage from " + enemy);
+                    System.out.println("#You strike the " + enemy + " for " + damageDealt + " damage");
+                    System.out.println("#You received " + damageTaken + " damage from " + enemy);
 
                     if (health < 1) {
-                        System.out.println(" Your health is too low use potion");
+                        System.out.println("Your health is too low use potion");
                         break;
                     }
 
@@ -64,7 +65,7 @@ public class battleSim {
                     if (numHealthPotion > 0) {
                         health += healthPotionHealAmount;
                         numHealthPotion--;
-                        System.out.println("\t You used a potion , that healed you for " + healthPotionHealAmount
+                        System.out.println("#You used a potion , that healed you for " + healthPotionHealAmount
                                 + "\nYour health is now at " + health + " Hp" + "\n Potion now at " + numHealthPotion);
                     } else {
                         System.out.println("You out of potions , Beat A monster for one");
@@ -83,7 +84,8 @@ public class battleSim {
                 break;
             }
 
-            System.out.println("# " + enemy + " was defeated by "+ firstHero.getHeroName() +" of "+firstHero.getHeroClan()+" clan!" );
+            System.out.println("# " + enemy + " was defeated by " + firstHero.getHeroName() + " of "
+                    + firstHero.getHeroClan() + " clan!");
             System.out.println("#you have " + health + "HP left.");
             if (rand.nextInt(100) < healthPotionDropChance) {
                 numHealthPotion++;
@@ -102,9 +104,7 @@ public class battleSim {
                 System.out.println(" you chose to leave war room");
                 return true;
             }
-
         }
         return running;
-
     }
 }
