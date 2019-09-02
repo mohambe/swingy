@@ -1,6 +1,7 @@
 com/wethinkcode/co/za/swingy/Database/ConnectionClass.class
 com/wethinkcode/co/za/swingy/Database/SQLiteJJDBC.class
 com/wethinkcode/co/za/swingy/HeroBuilder/HeroPlan.class
+com/wethinkcode/co/za/swingy/controller/HeroCreation.class
 com/wethinkcode/co/za/swingy/Database/SQLiteJJDBC2.class
 com/wethinkcode/co/za/swingy/App.class
 com/wethinkcode/co/za/swingy/Main.class
@@ -10,6 +11,8 @@ com/wethinkcode/co/za/swingy/HeroBuilder/Hero.class
 com/wethinkcode/co/za/swingy/HeroBuilder/OldHeroBuilder.class
 com/wethinkcode/co/za/swingy/Database/Connect.class
 com/wethinkcode/co/za/swingy/HeroBuilder/HeroEngineer.class
+com/wethinkcode/co/za/swingy/Database/DatabaseMethod.class
 com/wethinkcode/co/za/swingy/HeroBuilder/TestHeroBuilder.class
 com/wethinkcode/co/za/swingy/controller/battleSim.class
+com/wethinkcode/co/za/swingy/controller/controls.class
 com/wethinkcode/co/za/swingy/Database/SQLiteJJDBC1.class

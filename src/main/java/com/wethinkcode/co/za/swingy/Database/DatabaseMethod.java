@@ -89,7 +89,9 @@ public class DatabaseMethod {
             while (rs.next()) {
                 String name = rs.getString("name");
                 String clan = rs.getString("clan_name");
-                System.out.println(i + "." + name + " of clan " + clan);
+                int hp=rs.getInt("health");
+                int dp =rs.getInt("damage");
+                System.out.println(i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp);
                 i++;
             }
             connect.close();
@@ -112,6 +114,7 @@ public class DatabaseMethod {
             {
                 name = rs.getString("name");
                 String clan = rs.getString("clan_name");
+
                 System.out.println("." + name + " of clan " + clan);
                 connect.close();
             }
@@ -120,6 +123,68 @@ public class DatabaseMethod {
             System.exit(0);
         }
         return name;
+    }
+
+    public void update_hero(String H_name)
+    {
+        Connection connect = null;
+        Statement stmt= null;
+        Statement stmt_1= null;
+        // String name =null;
+        int new_hp;
+        int new_dp;
+
+        ConnectionClass  connection = new ConnectionClass();
+        connect = connection.connectionClass();
+        try{
+//            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs= stmt.executeQuery("SELECT HEALTH, DAMAGE FROM HEROS WHERE NAME = '"+ H_name+"'");
+            {
+                new_hp = rs.getInt("HEALTH") + 20;
+                new_dp = rs.getInt("DAMAGE") + 20;
+                System.out.println(new_hp);
+                System.out.println(new_dp);
+            }
+//            connect.setAutoCommit(false);
+            System.out.println("\n\n"+new_hp);
+            System.out.println(new_dp);
+
+
+//            stmt_1 = connect.createStatement();
+            System.out.println("1");
+            String sql="UPDATE  HEROS SET HEALTH = '"+ new_hp+"', DAMAGE = '"+new_dp+"' WHERE NAME = '"+ H_name+"'";
+            System.out.println("2" + new_hp);
+            stmt.executeUpdate(sql);
+            System.out.println("3" + new_dp);
+//            stmt_1.close();
+            stmt.close();
+//            connect.close();
+            System.out.println("4");
+        }catch(Exception e)
+        {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
+
+        try {
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS WHERE NAME = '"+ H_name+"' ");
+            int i = 1;
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String clan = rs.getString("clan_name");
+                int hp=rs.getInt("health");
+                int dp =rs.getInt("damage");
+                System.out.println(i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp);
+                i++;
+            }
+            connect.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
     }
 
     public void create_new_hero(String Hero_name, String clan, int hp, int dp) {
@@ -144,5 +209,4 @@ public class DatabaseMethod {
         System.out.println("Created");
     }
 
-    pu
 }

@@ -26,6 +26,7 @@ public class controls {
             if (result == true) {
                 System.out.println("Winner");
                 //update hero status
+                data.update_hero(Hero_name);
 
             } else if (result == false) {
                 System.out.println("Loser");
