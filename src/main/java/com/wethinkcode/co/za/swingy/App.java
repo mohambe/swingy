@@ -2,11 +2,16 @@ package com.wethinkcode.co.za.swingy;
 
 import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
 import com.wethinkcode.co.za.swingy.controller.HeroCreation;
+import com.wethinkcode.co.za.swingy.views.test.Story;
+import com.wethinkcode.co.za.swingy.views.test.VisibilityManager;
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         DatabaseMethod create = new DatabaseMethod();
+        VisibilityManager vm = null;
+        Story story= null;
 
         create.SwingyTable();
         while (true) {
@@ -33,7 +38,7 @@ public class App {
                 // might need to make map return something so we can determine whether to
                 // increase map level
                 int map_size = (level - 1) * 5 + 10 - (level / 2);
-                Map Map = new Map(map_size, Hero_name);
+                Map Map = new Map(map_size, Hero_name, vm);
 
             } else if (choice.equals("2")) {
                 // create

@@ -21,6 +21,8 @@ public class VisibilityManager {
         ui.choiceButtonPanel.setVisible(false);
         ui.inputPanel.setVisible(false);
         ui.playerPanel.setVisible(false);
+
+        ui.characterListPanel.setVisible(false); // don't really need yah
     }
 
     public void showTextBox() {
@@ -57,7 +59,7 @@ public class VisibilityManager {
         ui.characterListPanel.setVisible(true);
         ui.inputPanel.setVisible(true);
 
-        ui.characterTextArea.setText("HELLOOOOOOO\nsdskdksakds\nsdsdsda'n");
+//        ui.characterTextArea.setText("HELLOOOOOOO\nsdskdksakds\nsdsdsda'n");
 
     }
 }

@@ -3,6 +3,8 @@ package com.wethinkcode.co.za.swingy;
 import java.util.Random;
 import java.util.Scanner;
 import com.wethinkcode.co.za.swingy.controller.*;
+import com.wethinkcode.co.za.swingy.views.test.Story;
+import com.wethinkcode.co.za.swingy.views.test.VisibilityManager;
 
 public class Map {
     static int a = 0;
@@ -39,9 +41,12 @@ public class Map {
     }
 
     // constructor
-    public Map(int map_size, String Hero_name) {
+    public Map(int map_size, String Hero_name , VisibilityManager vm ) {
 
         String map[][] = new String[map_size][map_size];
+        vm.titleToTown();
+
+        System.out.println("loo555");
 
         for (int i = 0; i < map_size; i++) {
             for (int j = 0; j < map_size; j++) {

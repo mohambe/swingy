@@ -101,6 +101,36 @@ public class DatabaseMethod {
         }
     }
 
+    public String[] fetch_into_list() {
+        Connection connect = null;
+        Statement stmt = null;
+        ConnectionClass connection = new ConnectionClass();
+        connect = connection.connectionClass();
+        String [] list1 = new String[20];
+        try {
+            connect.setAutoCommit(false);
+            stmt = connect.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM HEROS");
+            int i = 1;
+            int j= 0;
+            while (rs.next()) {
+                String name = rs.getString("name");
+                String clan = rs.getString("clan_name");
+                int hp=rs.getInt("health");
+                int dp =rs.getInt("damage");
+                System.out.println(i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp);
+                list1[j] = i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp;
+                j++;
+                i++;
+            }
+            connect.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            System.exit(0);
+        }
+        return list1;
+    }
+
     public String fetch_hero_name(String H_name) {
         Connection connect = null;
         Statement stmt = null;

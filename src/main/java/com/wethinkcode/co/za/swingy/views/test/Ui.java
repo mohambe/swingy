@@ -3,12 +3,9 @@ package com.wethinkcode.co.za.swingy.views.test;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;;
+import javax.swing.*;
+;
+import com.wethinkcode.co.za.swingy.Database.*;
 import  com.wethinkcode.co.za.swingy.views.test.*;
 
 
@@ -23,13 +20,21 @@ public class Ui{
     JButton startButton, choice1, choice2, choice3, choice4, submitButton;
     JTextArea mainTextArea , characterTextArea;
     JTextField textField;
+    JList list ;
+    String listing [] = new String[20];
     Font titleFont = new Font("Time New Roman", Font.PLAIN, 90);
     Font normalFont = new Font("Time New Roman", Font.PLAIN, 28);
+    DatabaseMethod fetch = new DatabaseMethod();
+
 
     public Ui() {}
 
+
+
     public void createUI(ChoiceHandler cHandler){
 
+//    listing = fetch
+        listing = fetch.fetch_into_list();
         //WINDOW
         window = new JFrame();
         window.setSize(800,600);
@@ -103,8 +108,12 @@ public class Ui{
 
         characterListPanel = new JPanel();//list of heroes
         characterListPanel.setBounds(100,100,600,250);
+        list =  new JList(listing);
+        characterListPanel.add(list);
         characterListPanel.setBackground(Color.red);
         window.add(characterListPanel);
+
+
 
         characterTextArea= new JTextArea(); //where we want to show the list of avaible heroes
         characterTextArea.setBounds(100,100,600,250);
