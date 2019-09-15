@@ -22,7 +22,6 @@ public class Map {
         if (a == 0 || a >= map_max || b == 0 || b >= map_max) {
             System.out.println("out of bond");
             map_max+=4;
-//            Map(map_max,Hero_name);
             Map Map = new Map(map_max, Hero_name);
             return false;
         } else {
