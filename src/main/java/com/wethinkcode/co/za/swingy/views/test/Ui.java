@@ -24,6 +24,7 @@ public class Ui{
     String listing [] = new String[20];
     Font titleFont = new Font("Time New Roman", Font.PLAIN, 90);
     Font normalFont = new Font("Time New Roman", Font.PLAIN, 28);
+    Font normalheader = new Font("Time New Roman", Font.PLAIN, 15);
     DatabaseMethod fetch = new DatabaseMethod();
 
 
@@ -165,7 +166,7 @@ public class Ui{
 
         choice4 = new JButton("Choice4");
         choice4.setBackground(Color.black);
-        choice4.setForeground(Color.white);
+        choice4.setForeground(Color.black);
         choice4.setFont(normalFont);
         choice4.setFocusPainted(false);
         choice4.addActionListener(cHandler);  //handler
@@ -179,22 +180,22 @@ public class Ui{
         playerPanel.setLayout(new GridLayout(1,4));
         window.add(playerPanel);
 
-        hpLabel = new JLabel("HP :");
-        hpLabel.setFont(normalFont);
+        hpLabel = new JLabel("Status:");
+        hpLabel.setFont(normalheader);
         hpLabel.setForeground(Color.white);
         playerPanel.add(hpLabel); // adding hp Label to player panel
         hpNumberLabel = new JLabel();
         hpNumberLabel.setForeground(Color.white);
-        hpNumberLabel.setFont(normalFont);
+        hpNumberLabel.setFont(normalheader);
         playerPanel.add(hpNumberLabel);
 
-        weaponLabel = new JLabel("Dp :");
+        weaponLabel = new JLabel(" ");
         weaponLabel.setForeground(Color.white);
-        weaponLabel.setFont(normalFont);
+        weaponLabel.setFont(normalheader);
         playerPanel.add(weaponLabel);
         weaponNameLabel = new JLabel();
         weaponNameLabel.setForeground(Color.white);
-        weaponNameLabel.setFont(normalFont);
+        weaponNameLabel.setFont(normalheader);
         playerPanel.add(weaponNameLabel); 
         window.setVisible(true);
 

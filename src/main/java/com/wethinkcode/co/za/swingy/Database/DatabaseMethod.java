@@ -118,7 +118,7 @@ public class DatabaseMethod {
                 String clan = rs.getString("clan_name");
                 int hp=rs.getInt("health");
                 int dp =rs.getInt("damage");
-                System.out.println(i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp);
+
                 list1[j] = i + "." + name + " of clan " + clan + "Hp:"+hp +"  Dp:"+dp;
                 j++;
                 i++;

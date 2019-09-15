@@ -1,13 +1,12 @@
 package com.wethinkcode.co.za.swingy.views.test;
 
 import com.wethinkcode.co.za.swingy.controller.controls;
-import com.wethinkcode.co.za.swingy.controller.*;
+
 
 public class gui_map {
 
     static int a = 5;
     static int b = 4;
-    static int map_max = 0;
     public String[][] main_map;
     controls control = new controls();
 

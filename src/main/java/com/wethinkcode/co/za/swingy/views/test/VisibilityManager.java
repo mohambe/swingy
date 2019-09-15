@@ -1,6 +1,5 @@
 package com.wethinkcode.co.za.swingy.views.test;
 
-import com.wethinkcode.co.za.swingy.views.test.*;
 
 public class VisibilityManager {
     public Ui ui;
@@ -23,10 +22,6 @@ public class VisibilityManager {
         ui.playerPanel.setVisible(false);
 
         ui.characterListPanel.setVisible(false); // don't really need yah
-    }
-
-    public void showTextBox() {
-
     }
 
     public void titleToTown() {
@@ -58,8 +53,6 @@ public class VisibilityManager {
         //Player section zone
         ui.characterListPanel.setVisible(true);
         ui.inputPanel.setVisible(true);
-
-//        ui.characterTextArea.setText("HELLOOOOOOO\nsdskdksakds\nsdsdsda'n");
 
     }
 }
