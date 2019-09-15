@@ -10,6 +10,7 @@ public class Map {
     static int a = 0;
     static int b = 0;
     static int map_max = 0;
+    boolean found = false;
 
     public boolean postion(String array[][], int x, int y, String Hero_name) {
         array[a][b] = "* ";
@@ -19,6 +20,7 @@ public class Map {
         boolean result;
         controls control = new controls();
         result = control.collision(array, a, b, Hero_name);
+        found = result;
 
         if (a == 0 || a >= map_max || b == 0 || b >= map_max) {
             System.out.println("out of bond");
@@ -39,6 +41,8 @@ public class Map {
         return true;
 
     }
+
+
 
     // constructor
     public Map(int map_size, String Hero_name , VisibilityManager vm ) {

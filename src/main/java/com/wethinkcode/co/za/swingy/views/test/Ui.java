@@ -188,7 +188,7 @@ public class Ui{
         hpNumberLabel.setFont(normalFont);
         playerPanel.add(hpNumberLabel);
 
-        weaponLabel = new JLabel("Weapon :");
+        weaponLabel = new JLabel("Dp :");
         weaponLabel.setForeground(Color.white);
         weaponLabel.setFont(normalFont);
         playerPanel.add(weaponLabel);

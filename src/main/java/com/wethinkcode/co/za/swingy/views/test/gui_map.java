@@ -9,6 +9,10 @@ public class gui_map {
     static int b = 4;
     static int map_max = 0;
     public String[][] main_map;
+    controls control = new controls();
+
+    boolean found = false;
+    boolean bound = true;
 
     public boolean postion(String array[][], int x, int y, String Hero_name) {
         array[a][b] = "* ";
@@ -16,36 +20,32 @@ public class gui_map {
         b += y;
 
         boolean result;
-        controls control = new controls();
-        System.out.println("in positions");
-        System.out.println(a);
-        System.out.println(b);
-        array[a][b] = "H ";
-        //
-         result = control.collision(array, a, b, Hero_name);
-
-        if (a == 0 || a >= 9 || b == 0 || b >= 9) {
+         result = control.collision_gui(array, a, b, Hero_name);
+         this.found = result;
+        if (a == 0 || a >= 8 || b == 0 || b >=8) {
             System.out.println("out of bond");
+            bound = false;
             return false;
         }
-        array[a][b] = "H ";
-//        } else {
-////
-////            if (result == false) {
-//                array[a][b] = "E ";
-//                a -= x;
-//                b -= y;
-//                array[a][b] = "H ";
-//                System.out.println("Help");
-//            } else {
-        //}
+        else {
+                    array[a][b] = "H ";
+        }
         return true;
-
     }
+
+    public boolean get_interaction()
+    {
+        return this.found;
+    }
+
+    public boolean get_getbound()
+    {
+        return this.bound;
+    }
+
     public void  map(int size) {
         try {
 
-            controls control = new controls();
             String map[][] = new String[size][size];
 
             System.out.println(a);
@@ -57,10 +57,6 @@ public class gui_map {
             }
 
             control.enemies(map,8);
-
-
-
-
             postion(map, 0, 0, "test");
             setMap(map);
             for (int i = 0; i < 9; i++) {
@@ -138,7 +134,6 @@ public class gui_map {
             System.out.print("\n");
         }
         setMap(MAP);
-
     }
 
     public void setMap(String[][] map) {
