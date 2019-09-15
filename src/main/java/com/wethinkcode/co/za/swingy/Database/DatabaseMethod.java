@@ -1,8 +1,8 @@
 package com.wethinkcode.co.za.swingy.Database;
 
-import com.wethinkcode.co.za.swingy.HeroBuilder.HeroBuilder;
-import com.wethinkcode.co.za.swingy.HeroBuilder.HeroEngineer;
-import com.wethinkcode.co.za.swingy.HeroBuilder.OldHeroBuilder;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.HeroBuilder;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.HeroEngineer;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.OldHeroBuilder;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

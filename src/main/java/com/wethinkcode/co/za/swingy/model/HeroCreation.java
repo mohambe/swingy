@@ -1,4 +1,4 @@
-package com.wethinkcode.co.za.swingy.controller;
+package com.wethinkcode.co.za.swingy.model;
 
 public class HeroCreation {
 

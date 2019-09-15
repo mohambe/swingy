@@ -1,10 +1,7 @@
-package com.wethinkcode.co.za.swingy;
+package com.wethinkcode.co.za.swingy.controller;
 
-import java.util.Random;
 import java.util.Scanner;
-import com.wethinkcode.co.za.swingy.controller.*;
-import com.wethinkcode.co.za.swingy.views.test.Story;
-import com.wethinkcode.co.za.swingy.views.test.VisibilityManager;
+
 
 public class Map {
     static int a = 0;
@@ -24,6 +21,9 @@ public class Map {
 
         if (a == 0 || a >= map_max || b == 0 || b >= map_max) {
             System.out.println("out of bond");
+            map_max+=4;
+//            Map(map_max,Hero_name);
+            Map Map = new Map(map_max, Hero_name);
             return false;
         } else {
 
@@ -37,20 +37,13 @@ public class Map {
                 array[a][b] = "H ";
             }
         }
-
         return true;
-
     }
 
-
-
     // constructor
-    public Map(int map_size, String Hero_name , VisibilityManager vm ) {
+    public Map(int map_size, String Hero_name) {
 
         String map[][] = new String[map_size][map_size];
-        vm.titleToTown();
-
-        System.out.println("loo555");
 
         for (int i = 0; i < map_size; i++) {
             for (int j = 0; j < map_size; j++) {

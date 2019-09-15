@@ -1,6 +1,6 @@
 // This is the interface that will be returned from the builder
 //carries the genaral needed setting of what should be made for Heroclass
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 
 public interface HeroPlan{
 

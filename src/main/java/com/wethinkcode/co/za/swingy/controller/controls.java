@@ -1,7 +1,7 @@
 package com.wethinkcode.co.za.swingy.controller;
 
 import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
-import com.wethinkcode.co.za.swingy.HeroBuilder.HeroEngineer;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.HeroEngineer;
 
 import java.util.Random;
 

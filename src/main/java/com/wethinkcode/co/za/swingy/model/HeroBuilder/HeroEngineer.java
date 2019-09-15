@@ -1,6 +1,6 @@
 // The director / engineer class creates a Hero using the
 // builder interface that is defined (OldHeroBuilder)
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 
 public class HeroEngineer {
 

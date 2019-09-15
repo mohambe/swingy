@@ -1,7 +1,8 @@
 package com.wethinkcode.co.za.swingy;
 
 import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
-import com.wethinkcode.co.za.swingy.controller.HeroCreation;
+import com.wethinkcode.co.za.swingy.controller.Map;
+import com.wethinkcode.co.za.swingy.model.HeroCreation;
 import com.wethinkcode.co.za.swingy.views.test.Story;
 import com.wethinkcode.co.za.swingy.views.test.VisibilityManager;
 
@@ -38,7 +39,7 @@ public class App {
                 // might need to make map return something so we can determine whether to
                 // increase map level
                 int map_size = (level - 1) * 5 + 10 - (level / 2);
-                Map Map = new Map(map_size, Hero_name, vm);
+                Map Map = new Map(map_size, Hero_name);
 
             } else if (choice.equals("2")) {
                 // create

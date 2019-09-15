@@ -1,5 +1,5 @@
 // The concrete Hero class based on the HeroPlan interface
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 
 public class Hero implements HeroPlan {
 

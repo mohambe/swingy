@@ -3,7 +3,7 @@
 
 // so the the Hero should call these methods for it to be 
 // considered properly built a Hero
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 public interface HeroBuilder {
 
     public void buildHeroName();

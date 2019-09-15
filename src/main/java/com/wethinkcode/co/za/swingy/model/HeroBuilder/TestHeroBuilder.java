@@ -1,4 +1,4 @@
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 public class TestHeroBuilder {
 
     public static void main(String[] args) {

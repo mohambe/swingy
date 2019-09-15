@@ -1,6 +1,6 @@
 // The concrete builder class that assembles the parts
 // of the finished Hero object
-package com.wethinkcode.co.za.swingy.HeroBuilder;
+package com.wethinkcode.co.za.swingy.model.HeroBuilder;
 
 public class OldHeroBuilder implements HeroBuilder {
 

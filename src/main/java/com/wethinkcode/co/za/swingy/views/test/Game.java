@@ -1,11 +1,7 @@
 package com.wethinkcode.co.za.swingy.views.test;
 
-import com.wethinkcode.co.za.swingy.Map;
-import com.wethinkcode.co.za.swingy.views.test.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import com.wethinkcode.co.za.swingy.views.test.Ui;
 
 public class Game{
 

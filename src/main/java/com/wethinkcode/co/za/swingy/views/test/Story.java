@@ -1,8 +1,8 @@
 package com.wethinkcode.co.za.swingy.views.test;
 
 import com.wethinkcode.co.za.swingy.Database.DatabaseMethod;
-import com.wethinkcode.co.za.swingy.HeroBuilder.Hero;
-import com.wethinkcode.co.za.swingy.HeroBuilder.HeroEngineer;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.Hero;
+import com.wethinkcode.co.za.swingy.model.HeroBuilder.HeroEngineer;
 import com.wethinkcode.co.za.swingy.views.test2.*;
 
 
