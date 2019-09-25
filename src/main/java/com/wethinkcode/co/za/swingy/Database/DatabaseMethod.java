@@ -54,12 +54,12 @@ public class DatabaseMethod {
                 health = rs.getInt("health");
                 damage = rs.getInt("damage");
 
-                System.out.println("ID = " + id);
-                System.out.println("NAME = " + name);
-                System.out.println("CLAN_NAME = " + clan_name);
-                System.out.println("HEALTH = " + health);
-                System.out.println("DAMAGE = " + damage);
-                System.out.println();
+//                System.out.println("ID = " + id);
+//                System.out.println("NAME = " + name);
+//                System.out.println("CLAN_NAME = " + clan_name);
+//                System.out.println("HEALTH = " + health);
+//                System.out.println("DAMAGE = " + damage);
+//                System.out.println();
             }
 
             HeroBuilder oldStyleHero = new OldHeroBuilder(name, clan_name, health, damage);
@@ -182,15 +182,15 @@ public class DatabaseMethod {
 
 
 //            stmt_1 = connect.createStatement();
-            System.out.println("1");
+//            System.out.println("1");
             String sql="UPDATE  HEROS SET HEALTH = '"+ new_hp+"', DAMAGE = '"+new_dp+"' WHERE NAME = '"+ H_name+"'";
-            System.out.println("2" + new_hp);
+//            System.out.println("2" + new_hp);
             stmt.executeUpdate(sql);
-            System.out.println("3" + new_dp);
+//            System.out.println("3" + new_dp);
 //            stmt_1.close();
             stmt.close();
 //            connect.close();
-            System.out.println("4");
+//            System.out.println("4");
         }catch(Exception e)
         {
             System.out.println("Error: " + e.getMessage());

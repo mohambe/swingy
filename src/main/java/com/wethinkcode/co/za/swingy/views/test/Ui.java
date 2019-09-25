@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.*;
 import javax.swing.*;
-;
 import com.wethinkcode.co.za.swingy.Database.*;
 import  com.wethinkcode.co.za.swingy.views.test.*;
 

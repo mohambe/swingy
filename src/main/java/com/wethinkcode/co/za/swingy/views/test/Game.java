@@ -40,7 +40,7 @@ public class Game{
                 {
                     ui.inputLabel.setText(ui.textField.getText());;
                     lol =  ui.textField.getText().toString();
-                    System.out.println(lol);
+//                    System.out.println(lol);
                     ui.textField.setText(" ");
                     vm.titleToTown();
                     story.townGate(lol);

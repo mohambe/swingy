@@ -1,7 +1,12 @@
 package com.wethinkcode.co.za.swingy.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class HeroCreation {
 
+    @NotNull
+    @Size(min = 3, max = 15)
     private String name;
     private String clan;
     private int Hp;
@@ -47,6 +52,10 @@ public class HeroCreation {
         } else if (clan.toLowerCase().equals("pirate")) {
             setDp(20);
             setHp(90);
+        }else
+        {
+            System.out.println("Incorrect clan name");
+            System.exit(0);
         }
         setClan(clan);
         setName(Name);

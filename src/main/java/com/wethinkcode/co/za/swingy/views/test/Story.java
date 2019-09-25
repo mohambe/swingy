@@ -71,9 +71,6 @@ public class Story{
 
         System.out.println(Hero_name);
         this.hero = Hero_name;
-        System.out.println("fade into the backs");
-        System.out.println( hero);
-
         heroEngineer = data.fetchHeroEngine(Hero_name);
         heroEngineer.makeHero();
         Hero firstHero = heroEngineer.getHero();
@@ -134,12 +131,12 @@ public class Story{
             monster = new Monster_goblin();
             ui.mainTextArea.setText("You encountered a " + monster.name);
             ui.choice1.setText("fight");
-            ui.choice2.setText("crossMap");
+            ui.choice2.setText("run");
             ui.choice3.setText("");
             ui.choice4.setText("");
 
             game.nextPostion1 = "fight";
-            game.nextPostion2 = "run";
+            game.nextPostion2 = "crossMap";
             game.nextPostion3 = "";
             game.nextPostion4 = "";
             encounter = false;
@@ -317,7 +314,7 @@ public class Story{
         ui.hpNumberLabel.setText("" + player.hp);
         ui.choice1.setText(">");
         ui.choice2.setText("attack again ");
-        ui.choice3.setText("crossGuard");
+        ui.choice3.setText("run");
 
         game.nextPostion1 = "townGate";
         game.nextPostion2 = "attackGuard";
@@ -330,12 +327,12 @@ public class Story{
         ui.mainTextArea.setText(monster.name +": " + monster.hp);
 
         ui.choice1.setText("attack");
-        ui.choice2.setText("crossRoad");
+        ui.choice2.setText("Run");
         ui.choice3.setText("");
         ui.choice4.setText("");
 
         game.nextPostion1 = "playerAttack";
-        game.nextPostion2 = "crossRoad";
+        game.nextPostion2 = "crossMap";
         game.nextPostion3 = "";
         game.nextPostion4 = "";
     }
@@ -375,7 +372,7 @@ public class Story{
         ui.hpNumberLabel.setText(" "+ player.hp);
 
         ui.choice1.setText("> ");
-        ui.choice2.setText("");
+        ui.choice2.setText(" ");
         ui.choice3.setText("");
         ui.choice4.setText("");
 

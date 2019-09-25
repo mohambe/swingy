@@ -78,6 +78,8 @@ public class Map {
                 postion(map, 0, 1, Hero_name);
             } else if (chosen_command.equals("a")) {
                 postion(map, 0, -1, Hero_name);
+            }else if (chosen_command.equals("leave")) {
+                System.exit(0);
             }
 
         }
